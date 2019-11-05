@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.meis.widget.photodrag.PhotoDragRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/preview_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ImagePreviewActivity"
+    android:background="#000">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/preview_tb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:title="图片预览"
+        app:navigationIcon="@mipmap/ic_arrow_back_white_24dp"
+        app:titleTextColor="#FFF"/>
+
+    <ImageView
+        android:id="@+id/preview_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/app_name"
+        android:layout_below="@+id/preview_tb" />
+
+</com.meis.widget.photodrag.PhotoDragRelativeLayout>
