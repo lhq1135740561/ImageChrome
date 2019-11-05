@@ -2,11 +2,13 @@
 <litepal>
     <dbname value="image_360" />
 
-    <version value="7" />
+    <version value="8" />
 
     <list>
 
         <mapping class="com.yunge.myretrofitmvvm.java.model.DataName"/>
+
+        <mapping class="com.yunge.myretrofitmvvm.java.model.DataChrome"/>
 
     </list>
 

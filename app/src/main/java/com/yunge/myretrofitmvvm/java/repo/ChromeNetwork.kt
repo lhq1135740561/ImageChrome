@@ -65,6 +65,7 @@ class ChromeNetwork(val finish: OnFinish,val chromeDao: ChromeDao) {
 
                 override fun onError(e: Throwable) {
                     Log.d(TAG,"onError ---ChromeNetwork")
+                    Toast.makeText(MainApplication.context,"网络请求失败",Toast.LENGTH_SHORT).show()
                 }
             })
 

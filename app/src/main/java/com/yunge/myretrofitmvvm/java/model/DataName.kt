@@ -18,4 +18,11 @@ class RepoDataList{
 
         return LitePal.findAll(DataName::class.java)
     }
+
+
+    //找到分类壁纸数据库
+    fun getDataChromeLists(chromeId: String): MutableList<DataChrome>{
+
+        return LitePal.where("class_id = ?",chromeId).find(DataChrome::class.java)
+    }
 }

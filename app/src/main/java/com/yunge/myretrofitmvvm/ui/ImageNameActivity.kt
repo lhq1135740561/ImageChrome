@@ -1,6 +1,5 @@
 package com.yunge.myretrofitmvvm.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -8,15 +7,13 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.yunge.myretrofitmvvm.MainActivity
 import com.yunge.myretrofitmvvm.R
 import com.yunge.myretrofitmvvm.java.db.ChromeDao
-import com.yunge.myretrofitmvvm.java.model.DataName
 import com.yunge.myretrofitmvvm.java.model.RepoDataList
 import com.yunge.myretrofitmvvm.java.model.ResponseChromeName.DataChromeName
 import com.yunge.myretrofitmvvm.java.repo.ChromeNetwork
-import com.yunge.myretrofitmvvm.ui.adapter.ImageLitepalNameAdapter
+import com.yunge.myretrofitmvvm.ui.adapter.litepal.ImageLitepalNameAdapter
 import com.yunge.myretrofitmvvm.ui.adapter.ImageNameAdapter
 import kotlinx.android.synthetic.main.activity_image.*
 import org.litepal.LitePal
-import org.litepal.extension.delete
 import org.litepal.tablemanager.callback.DatabaseListener
 
 
@@ -106,7 +103,12 @@ class ImageNameActivity : BaseActivity(), ChromeNetwork.OnFinish,
 
             manegerLayout = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
             image_rv.layoutManager = manegerLayout
-            litepalNameAdapter = ImageLitepalNameAdapter(dataNameLists, this, this)
+            litepalNameAdapter =
+                ImageLitepalNameAdapter(
+                    dataNameLists,
+                    this,
+                    this
+                )
             image_rv.adapter = litepalNameAdapter
             Toast.makeText(this, "数据不为空", Toast.LENGTH_SHORT).show()
         }

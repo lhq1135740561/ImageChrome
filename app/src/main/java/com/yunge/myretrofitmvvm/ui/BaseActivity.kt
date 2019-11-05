@@ -7,7 +7,7 @@ import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
 import com.yunge.myretrofitmvvm.R
 
-abstract class BaseActivity : FragmentActivity() {
+abstract class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
