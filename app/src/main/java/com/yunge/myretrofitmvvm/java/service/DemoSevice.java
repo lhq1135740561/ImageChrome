@@ -39,6 +39,7 @@ public interface DemoSevice {
     Observable<ResponseChrome> queryChrome(@QueryMap Map<String,String> params);
 
 
+    //360壁纸名称接口
     @GET("index.php")
     Observable<ResponseChromeName> queryChromeName(@QueryMap Map<String,String> params);
 }

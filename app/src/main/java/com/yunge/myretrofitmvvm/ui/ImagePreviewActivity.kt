@@ -8,7 +8,7 @@ import com.meis.widget.photodrag.PhotoDragHelper
 import com.yunge.myretrofitmvvm.R
 import kotlinx.android.synthetic.main.activity_image_preview.*
 
-class ImagePreviewActivity : FragmentActivity() {
+class ImagePreviewActivity : BaseActivity() {
 
 
 

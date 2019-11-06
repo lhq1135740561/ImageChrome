@@ -32,7 +32,7 @@ object ServiceCreator {
     /**
      * 获取service接口
      */
-    fun <T> getService(clz: Class<T>): T {
+    fun <T : Any> getService(clz: Class<T>): T {
 
 
         return createRetrofit().create(clz)

@@ -9,6 +9,7 @@ class HttpConfig {
         const val KEY = "key"
 
         //Weather
+        //https://op.juhe.cn/onebox/weather/query?cityname=南昌&key=afc28ae28c6f1b520dab5d1ed537f6c0
 
         const val BASE_URL_WEATHER = "https://op.juhe.cn/"
 

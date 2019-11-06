@@ -12,12 +12,6 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.nostra13.universalimageloader.core.DisplayImageOptions
-import com.nostra13.universalimageloader.core.ImageLoader
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration
-import com.nostra13.universalimageloader.core.assist.ImageScaleType
-import com.nostra13.universalimageloader.core.assist.QueueProcessingType
-import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer
 import com.yunge.myretrofitmvvm.java.RetrofitCallManager
 import com.yunge.myretrofitmvvm.java.RetrofitRxChromeManeger
 import com.yunge.myretrofitmvvm.java.RetrofitRxManager
@@ -38,7 +32,6 @@ import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_base.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.image_item.*
 import org.litepal.LitePal
@@ -76,7 +69,7 @@ class MainActivity : BaseActivity(), ImageAdapter.OnClickLister {
 
     private val retrofitLists = ArrayList<RetrofitRxKotlin>()
 
-    private val imageLoader: ImageLoader = ImageLoader.getInstance()
+//    private val imageLoader: ImageLoader = ImageLoader.getInstance()
 
     private val url = "https://cn.bing.com/th?id=OIP.UmiwejL0PKV8HVbrmGxLzwHaNK&pid=Api&rs=1"
 
@@ -141,6 +134,10 @@ class MainActivity : BaseActivity(), ImageAdapter.OnClickLister {
         }
 
 
+        main_tb.setNavigationOnClickListener {
+            finish()
+        }
+
         dataChromeLists.forEach {
             Log.d(TAG, "${it.id}--作者：${it.utag}")
         }
@@ -195,7 +192,7 @@ class MainActivity : BaseActivity(), ImageAdapter.OnClickLister {
                         imageLists = t.data as ArrayList<ResponseChrome.Data>
 
                         //数据保存到数据库中
-                        if (dataChromeLists.isNullOrEmpty() && dataChromeLists.size == 0) {
+                        if (dataChromeLists.isNullOrEmpty() && dataChromeLists.size == 0 && imageLists.isNotEmpty()) {
                             imageLists.forEach {
                                 if(it.utag.isNotEmpty() && it.class_id.isNotEmpty() && it.img_1024_768.isNotEmpty()) {
                                     val dataChrome =
@@ -233,10 +230,6 @@ class MainActivity : BaseActivity(), ImageAdapter.OnClickLister {
             })
 
 
-        main_tb.setNavigationOnClickListener {
-            finish()
-        }
-
     }
 
 
@@ -257,7 +250,7 @@ class MainActivity : BaseActivity(), ImageAdapter.OnClickLister {
 
     private fun initImageLoader(context: Context) {
 
-        //1.使用Builder构建 ImageLoader的配置对象
+/*        //1.使用Builder构建 ImageLoader的配置对象
         val config = ImageLoaderConfiguration.Builder(context)
             //加载图片的线程数
             .threadPriority(Thread.NORM_PRIORITY - 2)
@@ -287,6 +280,8 @@ class MainActivity : BaseActivity(), ImageAdapter.OnClickLister {
             .bitmapConfig(Bitmap.Config.RGB_565)
             .displayer(RoundedBitmapDisplayer(10))
             .build()
+
+ */
     }
 
 

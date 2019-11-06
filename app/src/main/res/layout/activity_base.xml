@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.BaseActivity">
 
-
     <ImageView
         android:id="@+id/main_imageview"
         android:layout_width="wrap_content"

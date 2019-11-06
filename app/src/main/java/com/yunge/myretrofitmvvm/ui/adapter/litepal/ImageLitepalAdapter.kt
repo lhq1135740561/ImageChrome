@@ -33,7 +33,7 @@ class ImageLitepalAdapter(private val imageLists: List<DataChrome>, private var 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = imageLists[position]
-        Glide.with(context).load(data.img_1024_768).error(R.drawable.ic_launcher_background).into(holder.image)
+        Glide.with(context).load(data.img_1024_768).error(R.drawable.v1).into(holder.image)
         holder.text.text = data.utag
 //        holder.image.setImageResource(R.mipmap.v1)
 

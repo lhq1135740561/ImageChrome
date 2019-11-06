@@ -5,13 +5,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.yunge.myretrofitmvvm.R
 
 abstract class BaseActivity : AppCompatActivity() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_base)
+//        setContentView(R.layout.activity_base)
     }
 
     private fun getLContext(): Context = this
@@ -32,4 +34,5 @@ abstract class BaseActivity : AppCompatActivity() {
 
         getLContext().startActivity(Intent(getLContext(),clz))
     }
+
 }

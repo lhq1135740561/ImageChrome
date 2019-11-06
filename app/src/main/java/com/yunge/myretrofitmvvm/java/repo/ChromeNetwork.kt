@@ -51,7 +51,7 @@ class ChromeNetwork(val finish: OnFinish,val chromeDao: ChromeDao) {
                     //获取数据库对象
                     var dataLists = RepoDataList().getDataLists()
                     //当数据库为空时，添加数据
-                    if(dataLists.isNullOrEmpty() && dataLists.size == 0) {
+                    if(dataLists.isNullOrEmpty() && dataLists.size == 0 && imageNameList.isNotEmpty()) {
                         Log.d(ImageNameActivity.TAG,"数据库添加数据")
                         for (data: DataChromeName in imageNameList) {
                             val dataName = DataName(data.name, data.page_id)
